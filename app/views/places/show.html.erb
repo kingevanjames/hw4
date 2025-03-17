@@ -1,14 +1,26 @@
-<div class="container text-center">
-<h1><%= @place["name"] %></h1>
 
-<h2>My Entries</h2>
-<% for entry in @entries %>
-  <% if entry.user_id == @current_user.id %>
-    <h3><%= entry["title"] %></h3>
-    <h4><%= entry["occurred_on"] %></h4>
-    <p><%= entry["description"] %></p>
+<h1 class="text-center mb-4"><%= @place["name"] %></h1>
+
+<a class="btn btn-outline-primary mt-4 mb-4" href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
+
+<div class="row">
+  
+  <% for entry in @entries %>
+    <div class="col-12 col-sm-4">
+      <% if entry.user_id == @current_user.id %>
+        <h4><%= entry["title"] %></h4>
+        <img src="<%= entry.image %>" class="img-fluid">
+        
+          <h5><%= entry["occurred_on"] %></h5>
+        
+        
+          <p><%= entry["description"] %></p>
+        
+        
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>
 
 <p>
   <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
@@ -17,3 +29,6 @@
 <p>
   <a href="/places">Back to All Places</a>
 </p>
+
+    
+  

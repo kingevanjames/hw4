@@ -35,11 +35,13 @@
           <ul class="navbar-nav mb-2 mb-lg-0">
             <% @user = User.find_by({ "id" => session["user_id"]}) %>
             <% if @user == nil %>
-              <li class="nav-item ms-2"><a href="/login">Login</a></li>
-              <li class="nav-item ms-2"><a href="/users/new">Signup</a></li>
+              <a class="nav-link" href="/login">Login</a>
+              <li class="nav-item mt-2 ms-2 me-2"> | </li>
+              <a class="nav-link" href="/users/new">Signup</a>
             <% else %>
-              <li class="nav-text ms-2">Hello, <%= @user.username %>   </li>
-              <li class="nav-item ms-2"><a href="/logout"> Logout</a></li>
+              <li class="nav-item mt-2 ms-2 me-2"> Hello, <%= @user.username %></li>
+              <li class="nav-item mt-2 ms-2 me-2"> | </li>
+              <a class="nav-link" href="/logout"> Logout</a>
             <% end %>
           </ul>
         </div>

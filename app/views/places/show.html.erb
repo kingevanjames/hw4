@@ -6,7 +6,7 @@
 <div class="row">
   
   <% for entry in @entries %>
-    <div class="col-12 col-sm-4">
+    <div class="col-12 col-sm-6 col-md-4">
       <% if entry.user_id == @current_user.id %>
         <h4><%= entry["title"] %></h4>
         <% if entry.uploaded_image.attached? %>
@@ -27,13 +27,7 @@
   <% end %>
 </div>
 
-<p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
-</p>
 
-<p>
-  <a href="/places">Back to All Places</a>
-</p>
 
     
   

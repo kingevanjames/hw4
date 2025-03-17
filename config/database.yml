@@ -23,7 +23,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: journals_production
-  username: journals
-  password: <%= ENV["JOURNALS_DATABASE_PASSWORD"] %>
+  database: journals_final_production
+  username: journals_final
+  password: <%= ENV["JOURNALS_FINAL_DATABASE_PASSWORD"] %>
 

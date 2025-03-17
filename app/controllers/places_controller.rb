@@ -10,12 +10,14 @@ class PlacesController < ApplicationController
   end
 
   def new
+    @user = User.find_by({ "id" => session["user_id"] })
   end
 
   def create
+    @user = User.find_by({ "id" => session["user_id"] })
     @place = Place.new
     @place["name"] = params["name"]
-    @place.user_id = @current_user.id
+    @place.user_id = @user.id
     @place.save
     redirect_to "/places"
   end

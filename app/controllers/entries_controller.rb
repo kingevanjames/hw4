@@ -11,7 +11,7 @@ class EntriesController < ApplicationController
     @entry["place_id"] = params["place_id"]
     @entry["user_id"] = @current_user["id"]
     @entry["image"] = params["image"]
-    # @entry.uploaded_image.attach(params["uploaded_image"])
+    @entry.uploaded_image.attach(params["uploaded_image"])
     @entry.save
     redirect_to "/places/#{@entry["place_id"]}"
   end

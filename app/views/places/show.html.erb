@@ -9,7 +9,12 @@
     <div class="col-12 col-sm-4">
       <% if entry.user_id == @current_user.id %>
         <h4><%= entry["title"] %></h4>
-        <img src="<%= entry.image %>" class="img-fluid">
+        <% if entry.uploaded_image.attached? %>
+          <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
+        <% else %>
+          <img src="<%= entry.image %>" class="img-fluid">
+        <% end %>
+
         
           <h5><%= entry["occurred_on"] %></h5>
         

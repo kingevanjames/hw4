@@ -1,19 +1,21 @@
 <% if @current_user != nil %>
 
   <h1>My Places</h1>
-
-  <ul>
+  
+  <div class="mb-auto">
     <% for place in @places %>
       <% if place.user_id == @current_user.id %>
-        <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+        <a href="/places/<%= place["id"] %>"><%= place["name"] %></a></div>
       
       <% end %>
-    <% end %>
-  </ul>
 
-  <p>
-    <a href="/places/new">New place</a>
-  </p>
+    <% end %>
+  
+  
+    
+      <a href="/places/new">New place</a>
+    
+  </div>
 
 
 <% else %>

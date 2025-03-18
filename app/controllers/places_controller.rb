@@ -2,6 +2,13 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+
+    respond_to do |format|
+      format.html # implicitly renders posts/index.html.erb
+      format.json do
+        render :json => []
+      end
+    end
   end
 
   def show
@@ -23,7 +30,7 @@ class PlacesController < ApplicationController
 
     
   end
-  
+
   before_action :allow_cors
   def allow_cors
     response.headers['Access-Control-Allow-Origin'] = '*'

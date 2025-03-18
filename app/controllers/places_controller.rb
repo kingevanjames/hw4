@@ -24,7 +24,7 @@ class PlacesController < ApplicationController
     @user = User.find_by({ "id" => session["user_id"] })
     @place = Place.new
     @place["name"] = params["name"]
-    @place.user_id = @user.id
+    @place["user_id"] = @user.id
     @place.save
     redirect_to "/places"
 

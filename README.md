@@ -2,4 +2,4 @@
 
 Full instructions at https://entr451.com/assignment-4/
 
-live on render: https://journals-final-ev.onrender.com/
+live on render: https://journals-final-ed-ev.onrender.com
